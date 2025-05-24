@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  background: #0d0d0d;
+  animation: fadeIn 1.5s ease-in;
+  color: #f2f2f2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-title {
+  text-align: center;
+  font-size: 40px;
+  margin: 30px 0;
+  font-weight: bold;
+  color: #571a1a;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 180px;
+  background: #1a0000;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.4;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.card .front {
+  background-color: #330000;
+  color: #f2f2f2;
+  z-index: 2;
+}
+
+.card .back {
+  background-color: #660000;
+  color: #ffffff;
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+.card:hover .front {
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+.card:hover .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.bla-box {
+  width: 80px;
+  height: 40px;
+  background-color: #440101;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  transition: width 0.4s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.bla-box:hover {
+  width: 300px;
+  white-space: normal;
+}
